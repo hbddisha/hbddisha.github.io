@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Happy Birthday ! 🫶🏻🎉</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/dffffa55e9.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Montserrat:wght@400;600&family=Lobster+Two:wght@700&family=Satisfy&family=Dancing+Script&display=swap");
+      body {
+        cursor: url(./content2/My\ project-1.png) 0 45, auto;
+      }
+      button {
+        cursor: url(./content2/My\ project-1.png) 0 45, auto !important;
+      }
+      .footerLink {
+        text-decoration: none;
+        color: white;
+        transition: opacity 0.25s ease-out;
+      }
+      .footerLink:hover {
+        color: white;
+        opacity: 0.8;
+      }
+      .hover-underline-animation {
+        display: inline-block;
+        position: relative;
+        /* color: #0087ca; */
+      }
+
+      .hover-underline-animation::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+      }
+
+      .hover-underline-animation:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+      }
+      .btn-des {
+        font-family: "Dancing Script", cursive;
+        font-size: 24px;
+      }
+      .modal-heading {
+        font-family: "Satisfy", cursive;
+      }
+      .modal-des {
+        font-family: "Montserrat", sans-serif;
+      }
+      /* MUSIC PLAYER */
+      .audio-player {
+        --player-button-width: 3em;
+        --sound-button-width: 2em;
+        --space: 0.5em;
+        width: 15rem;
+        height: 15rem;
+        border: 1px solid black;
+      }
+
+      .icon-container {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+      }
+      .song-1 {
+        background-image: url(./content2/Broken.jpeg);
+      }
+      .song-2 {
+        background-image: url(./content2/Hey\ Angel.jpeg);
+      }
+      .song-3 {
+        background-image: url(./content2/Ghostin.jpeg);
+      }
+      .song-4 {
+        background-image: url(./content2/River.jpeg);
+      }
+
+      .audio-icon {
+        width: 90%;
+        height: 90%;
+      }
+
+      .controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .player-button {
+        background-color: transparent;
+        border: 0;
+        width: var(--player-button-width);
+        height: var(--player-button-width);
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .timeline {
+        -webkit-appearance: none;
+        width: calc(
+          100% -
+            (
+              var(--player-button-width) + var(--sound-button-width) +
+                var(--space)
+            )
+        );
+        height: 0.5em;
+        background-color: #e5e5e5;
+        border-radius: 5px;
+        background-size: 0% 100%;
+        background-image: linear-gradient(#dab2c4, #a07298);
+        background-repeat: no-repeat;
+        margin-right: var(--space);
+      }
+
+      .timeline::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.1s;
+        background-color: #e3d4db;
+      }
+
+      .timeline::-moz-range-thumb {
+        -webkit-appearance: none;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.1s;
+        background-color: #ecdde4;
+      }
+
+      .timeline::-ms-thumb {
+        -webkit-appearance: none;
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.1s;
+        background-color: #e8adc7;
+      }
+
+      .timeline::-webkit-slider-thumb:hover {
+        background-color: #d18acd;
+      }
+
+      .timeline:hover::-webkit-slider-thumb {
+        opacity: 1;
+      }
+
+      .timeline::-moz-range-thumb:hover {
+        background-color: #d18acd;
+      }
+
+      .timeline:hover::-moz-range-thumb {
+        opacity: 1;
+      }
+
+      .timeline::-ms-thumb:hover {
+        background-color: #d18acd;
+      }
+
+      .timeline:hover::-ms-thumb {
+        opacity: 1;
+      }
+
+      .timeline::-webkit-slider-runnable-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+
+      .timeline::-moz-range-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+
+      .timeline::-ms-track {
+        -webkit-appearance: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+      }
+
+      .sound-button {
+        background-color: transparent;
+        border: 0;
+        width: var(--sound-button-width);
+        height: var(--sound-button-width);
+        cursor: pointer;
+        padding: 0;
+      }
+      .song-title {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+      }
+      .que {
+        font-family: "Montserrat", sans-serif;
+        color: #dbdbdb;
+      }
+      .ans {
+        font-family: "Montserrat", sans-serif;
+        color: #dfdfdf;
+        border-bottom: 1px solid rgb(214, 214, 214);
+      }
+      /* @keyframes hpOnBroom {
+        0% {
+          transform: translate(100vw, 100vh);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      .hpOnBroom {
+        width: 50%;
+
+        height: auto;
+        position: absolute;
+        z-index: 1000;
+        animation: 4s ease-out 0s 1 hpOnBroom;
+      } */
+
+      .faq {
+        background-image: url(./content2/faqBG.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .always img {
+        width: 100vw;
+      }
+      .vibe {
+        background-image: url(./content2/songsBG.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .song {
+        background-color: rgb(0, 0, 0, 0.2);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+      .instaBG {
+        background-image: url(./content2/instaBG.jpeg);
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      @keyframes train {
+        0% {
+          transform: translateX(200vw);
+        }
+        100% {
+          transform: translateX(-100vw);
+        }
+      }
+      .welcome {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        /* background-color: #000000; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease-out;
+      }
+      .train {
+        left: -100vw;
+        animation: train 20s ease-out 0s 1;
+      }
+      @keyframes showSlow {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.01;
+        }
+        75% {
+          opacity: 0.02;
+        }
+        95% {
+          opacity: 0.95;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes show {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .train,
+      .msg {
+        position: absolute;
+      }
+      .msg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+        animation: showSlow 8s ease-in 0s 1;
+      }
+      .potterhead {
+        height: 120px;
+        z-index: 1002;
+        /* opacity: ; */
+        /* animation: show 4s ease-in-out; */
+      }
+      @font-face {
+        src: url(./content2/HARRP___.TTF);
+        font-family: harryPotter;
+      }
+      @font-face {
+        src: url(./content2/harry_p/HARRYP__.TTF);
+        font-family: harryPotter2;
+      }
+      .welcomeMsg {
+        font-family: harryPotter2;
+        z-index: 1001;
+        font-size: 10rem;
+        margin: 0 auto;
+      }
+      .welcome button {
+        z-index: 1002;
+        padding: 10px 40px;
+        font-size: 24px;
+        width: 100%;
+        background-color: #696567;
+      }
+      #videoBG {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -100;
+        height: 100vh;
+        width: 100vw;
+      }
+      #videoBG source {
+        height: 100vh;
+        width: 100vw;
+      }
+      .container .card {
+        background-color: transparent;
+      }
+      .container .card-body {
+        /* background-image: url(./content2/bg1.jpeg); */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover; */
+        background-color: rgb(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        border: none;
+        color: white;
+      }
+      .modal-content .card-body {
+        background-color: white;
+        backdrop-filter: none;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./content2/bg1.jpeg" id="videoBG" alt="" />
+    <div class="welcome" id="welcome">
+      <video autoplay>
+        <source src="./content2/Hogwarts_Edit_2_mp4.mp4" type="video/mp4" />
+        <source src="./content2/Hogwarts_Edit_2.mov" type="video/mov" />
+      </video>
+    </div>
+    <h1
+      class="text-center p-3 display-5 bg-dark text-light mb-3"
+      style="font-family: 'Lobster Two', cursive"
+    >
+      Dishaaa !
+    </h1>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+      <div class="card mt-4 mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+              style="height: 100%"
+            >
+              <hr class="w-100" />
+              <h1
+                class="card-title text-center"
+                style="
+                  margin-bottom: 50px;
+                  font-size: 60px;
+                  font-family: '', cursive;
+                "
+              ></h1>
+              <h2
+                class="card-text text-center"
+                style="
+                  font-family: 'Amatic SC', cursive;
+                  font-weight: 700;
+                  font-size: 40px;
+                "
+              ></h2>
+              <hr class="w-100" />
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-outline-light my-5 btn-des"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              ></button>
+
+              <!-- Modal -->
+            </div>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 modal-heading"
+                      id="exampleModalLabel"
+                    ></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-2">
+                      <div class="row g-0">
+                        <div class="col-md-8">
+                          <div
+                            class="card-body d-flex justify-content-center align-items-center"
+                            style="height: 100%"
+                          >
+                            <p class="p-3 modal-des"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <img src="" class="img-fluid rounded-end" alt="..." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-5 mb-3">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+              style="height: 100%"
+            >
+              <hr class="w-100" />
+              <h1
+                class="card-title text-center"
+                style="
+                  margin-bottom: 50px;
+                  font-size: 60px;
+                  font-family: '', cursive;
+                "
+              ></h1>
+              <h2
+                class="card-text text-center"
+                style="
+                  font-family: 'Amatic SC', cursive;
+                  font-weight: 700;
+                  font-size: 40px;
+                "
+              ></h2>
+
+              <hr class="w-100" />
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-outline-light my-5 btn-des"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal2"
+              ></button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal2"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 modal-heading"
+                      id="exampleModalLabel"
+                    ></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-2">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img
+                            src=""
+                            class="img-fluid rounded-start"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div
+                            class="card-body d-flex justify-content-center align-items-center"
+                            style="height: 100%"
+                          >
+                            <p class="p-3 modal-des"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="" class="img-fluid rounded-end" alt="..." />
+          </div>
+        </div>
+      </div>
+      <div class="card mt-5 mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+              style="height: 100%"
+            >
+              <hr class="w-100" />
+              <h1
+                class="card-title text-center"
+                style="
+                  margin-bottom: 50px;
+                  font-size: 55px;
+                  font-family: '', cursive;
+                "
+              ></h1>
+              <h2
+                class="card-text text-center"
+                style="
+                  font-family: 'Amatic SC', cursive;
+                  font-weight: 700;
+                  font-size: 35px;
+                "
+              ></h2>
+              <hr class="w-100" />
+              <button
+                type="button"
+                class="btn btn-outline-light my-5 btn-des"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal3"
+              ></button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal3"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 modal-heading"
+                      id="exampleModalLabel"
+                    ></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-2">
+                      <div class="row g-0">
+                        <div class="col-md-8">
+                          <div
+                            class="card-body d-flex justify-content-center align-items-center"
+                            style="height: 100%"
+                          >
+                            <p class="p-3 modal-des"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <img src="" class="img-fluid rounded-end" alt="..." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-5 mb-3">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+              style="height: 100%"
+            >
+              <hr class="w-100" />
+              <h1
+                class="card-title text-center"
+                style="
+                  margin-bottom: 50px;
+                  font-size: 60px;
+                  font-family: '', cursive;
+                "
+              ></h1>
+              <h2
+                class="card-text text-center mx-5"
+                style="
+                  font-family: 'Amatic SC', cursive;
+                  font-weight: 700;
+                  font-size: 35px;
+                "
+              ></h2>
+
+              <hr class="w-100" />
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-outline-light my-5 btn-des"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal4"
+              ></button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal4"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 modal-heading"
+                      id="exampleModalLabel"
+                    ></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-2">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img
+                            src=""
+                            class="img-fluid rounded-start"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div
+                            class="card-body d-flex justify-content-center align-items-center"
+                            style="height: 100%"
+                          >
+                            <p class="p-3 modal-des"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="" class="img-fluid rounded-end" alt="..." />
+          </div>
+        </div>
+      </div>
+      <div class="card mt-5 mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+              style="height: 100%"
+            >
+              <hr class="w-100" />
+              <h1
+                class="card-title text-center"
+                style="
+                  margin-bottom: 50px;
+                  font-size: 55px;
+                  font-family: '', cursive;
+                "
+              ></h1>
+              <h2
+                class="card-text text-center mx-5"
+                style="
+                  font-family: 'Amatic SC', cursive;
+                  font-weight: 700;
+                  font-size: 35px;
+                "
+              ></h2>
+              <hr class="w-100" />
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-outline-light my-5 btn-des"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal5"
+              ></button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal5"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 modal-heading"
+                      id="exampleModalLabel"
+                    ></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-2">
+                      <div class="row g-0">
+                        <div class="col-md-8">
+                          <div
+                            class="card-body d-flex justify-content-center align-items-center"
+                            style="height: 100%"
+                          >
+                            <p class="p-3 modal-des"></p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <img src="" class="img-fluid rounded-end" alt="..." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mt-5 mb-5">
+        <div class="row g-0">
+          <div class="col-md-8">
+            <div
+              class="card-body d-flex flex-column justify-content-center align-items-center"
+              style="height: 100%"
+            >
+              <hr class="w-100" />
+              <h1
+                class="card-title text-center"
+                style="
+                  margin-bottom: 50px;
+                  font-size: 60px;
+                  font-family: '', cursive;
+                "
+              ></h1>
+              <h2
+                class="card-text text-center mx-5"
+                style="
+                  font-family: 'Amatic SC', cursive;
+                  font-weight: 700;
+                  font-size: 35px;
+                "
+              >
+                <i class="fa-solid fa-music fa-xs me-3"></i>
+              </h2>
+
+              <hr class="w-100" />
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-outline-light my-5 btn-des"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal6"
+              ></button>
+            </div>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal6"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-5 modal-heading"
+                      id="exampleModalLabel"
+                    ></h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="card mb-2">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img
+                            src=""
+                            class="img-fluid rounded-start"
+                            alt="..."
+                          />
+                        </div>
+                        <div class="col-md-8">
+                          <div
+                            class="card-body d-flex justify-content-center align-items-center flex-column"
+                            style="height: 100%"
+                          >
+                            <div class="d-flex align-items-center">
+                              <span class="modal-des"></span>
+                              <img
+                                src=""
+                                alt=""
+                                width="100px"
+                                style="margin-left: 10px; border-radius: 5px"
+                              />
+                            </div>
+                            <p class="p-3 modal-des"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <img src="" class="img-fluid rounded-end" alt="..." />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+
+    <div class="bg-dark text-light p-5 faq" style="width: 100vw; height: 50vh">
+      <div
+        class="display-5 pb-3 text-center heading"
+        style="font-family: 'Lobster Two', cursive; color: #e4e4e4"
+      >
+        <u>FAQs</u> 😂
+      </div>
+    </div>
+    <div class="always"><img src="./content2/always.jpeg" alt="" /></div>
+    <!-- MUSIC PLAYER -->
+
+    <div class="pb-5 vibe">
+      <div
+        class="display-5 p-4 text-center heading"
+        style="font-family: 'Lobster Two', cursive"
+      >
+        <u>Let's Vibe! 🎶</u>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div
+            class="card my-4 song"
+            style="
+              padding: 20px 20px 112px;
+              width: fit-content;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <div class="audio-player">
+              <div class="icon-container song-1"></div>
+              <div class="card-title text-center mt-3 song-title text-light">
+                Broken
+              </div>
+              <audio src="./content2/Broken.mp3" id="audio"></audio>
+              <div class="controls">
+                <button class="player-button" id="player-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <input
+                  type="range"
+                  class="timeline"
+                  id="timeline"
+                  max="100"
+                  value="0"
+                />
+                <button class="sound-button" id="sound-button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="card my-4 song"
+            style="
+              padding: 20px 20px 112px;
+              width: fit-content;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <div class="audio-player">
+              <div class="icon-container song-2"></div>
+              <div class="card-title text-center mt-3 song-title text-light">
+                Hey Angel
+              </div>
+              <audio src="./content2/Hey Angel.mp3" id="audio2"></audio>
+              <div class="controls">
+                <button class="player-button" id="player-button2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <input
+                  type="range"
+                  class="timeline"
+                  id="timeline2"
+                  max="100"
+                  value="0"
+                />
+                <button class="sound-button" id="sound-button2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="card my-4 song"
+            style="
+              padding: 20px 20px 112px;
+              width: fit-content;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <div class="audio-player">
+              <div class="icon-container song-3"></div>
+              <div class="card-title text-center mt-3 song-title text-light">
+                Ghostin
+              </div>
+              <audio src="./content2/Ghostin.mp3" id="audio3"></audio>
+              <div class="controls">
+                <button class="player-button" id="player-button3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <input
+                  type="range"
+                  class="timeline"
+                  id="timeline3"
+                  max="100"
+                  value="0"
+                />
+                <button class="sound-button" id="sound-button3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="card my-4 song"
+            style="
+              padding: 20px 20px 112px;
+              width: fit-content;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <div class="audio-player">
+              <div class="icon-container song-4"></div>
+              <div class="card-title text-center mt-3 song-title text-light">
+                River
+              </div>
+              <audio src="./content2/River.mp3" id="audio4"></audio>
+              <div class="controls">
+                <button class="player-button" id="player-button4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+                <input
+                  type="range"
+                  class="timeline"
+                  id="timeline4"
+                  max="100"
+                  value="0"
+                />
+                <button class="sound-button" id="sound-button4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="#dab2c4"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM REELS -->
+    <div class="bg-dark text-light instaBG" style="width: 100vw; height: 100vh">
+      <div class="container pb-5">
+        <div
+          class="display-5 heading text-center p-5"
+          style="font-family: 'Lobster Two', cursive"
+        >
+          <u>Only for you !</u> 🤍
+        </div>
+      </div>
+    </div>
+
+    <!-- JS FILES -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const myTimeout = setTimeout(() => {
+        document.getElementById("welcome").style.opacity = "0";
+        document.getElementById("welcome").style.zIndex = "-10000";
+      }, 25000);
+    </script>
+    <!-- MUSIC PLAYER -->
+    <script>
+      const playerButton = document.getElementById("player-button"),
+        audio = document.getElementById("audio"),
+        timeline = document.getElementById("timeline"),
+        soundButton = document.getElementById("sound-button"),
+        playIcon = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+      </svg>
+          `,
+        pauseIcon = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+    </svg>
+          `,
+        soundIcon = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+    </svg>`,
+        muteIcon = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>`;
+
+      function toggleAudio() {
+        if (audio.paused) {
+          audio.play();
+          playerButton.innerHTML = pauseIcon;
+        } else {
+          audio.pause();
+          playerButton.innerHTML = playIcon;
+        }
+      }
+
+      playerButton.addEventListener("click", toggleAudio);
+
+      function changeTimelinePosition() {
+        const percentagePosition = (100 * audio.currentTime) / audio.duration;
+        timeline.style.backgroundSize = `${percentagePosition}% 100%`;
+        timeline.value = percentagePosition;
+      }
+
+      audio.ontimeupdate = changeTimelinePosition;
+
+      function audioEnded() {
+        playerButton.innerHTML = playIcon;
+      }
+
+      audio.onended = audioEnded;
+
+      function changeSeek() {
+        const time = (timeline.value * audio.duration) / 100;
+        audio.currentTime = time;
+      }
+
+      timeline.addEventListener("change", changeSeek);
+
+      function toggleSound() {
+        audio.muted = !audio.muted;
+        soundButton.innerHTML = audio.muted ? muteIcon : soundIcon;
+      }
+
+      soundButton.addEventListener("click", toggleSound);
+    </script>
+    <script>
+      const playerButton2 = document.getElementById("player-button2"),
+        audio2 = document.getElementById("audio2"),
+        timeline2 = document.getElementById("timeline2"),
+        soundButton2 = document.getElementById("sound-button2"),
+        playIcon2 = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+      </svg>
+          `,
+        pauseIcon2 = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+    </svg>
+          `,
+        soundIcon2 = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+    </svg>`,
+        muteIcon2 = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>`;
+
+      function toggleAudio2() {
+        if (audio2.paused) {
+          audio2.play();
+          playerButton2.innerHTML = pauseIcon2;
+        } else {
+          audio2.pause();
+          playerButton2.innerHTML = playIcon2;
+        }
+      }
+
+      playerButton2.addEventListener("click", toggleAudio2);
+
+      function changeTimelinePosition2() {
+        const percentagePosition = (100 * audio2.currentTime) / audio2.duration;
+        timeline2.style.backgroundSize = `${percentagePosition}% 100%`;
+        timeline2.value = percentagePosition;
+      }
+
+      audio2.ontimeupdate = changeTimelinePosition2;
+
+      function audioEnded2() {
+        playerButton2.innerHTML = playIcon2;
+      }
+
+      audio2.onended = audioEnded2;
+
+      function changeSeek2() {
+        const time = (timeline2.value * audio2.duration) / 100;
+        audio2.currentTime = time;
+      }
+
+      timeline2.addEventListener("change", changeSeek2);
+
+      function toggleSound2() {
+        audio2.muted = !audio2.muted;
+        soundButton2.innerHTML = audio2.muted ? muteIcon2 : soundIcon2;
+      }
+
+      soundButton2.addEventListener("click", toggleSound2);
+    </script>
+    <script>
+      const playerButton3 = document.getElementById("player-button3"),
+        audio3 = document.getElementById("audio3"),
+        timeline3 = document.getElementById("timeline3"),
+        soundButton3 = document.getElementById("sound-button3"),
+        playIcon3 = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+      </svg>
+          `,
+        pauseIcon3 = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+    </svg>
+          `,
+        soundIcon3 = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+    </svg>`,
+        muteIcon3 = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>`;
+
+      function toggleAudio3() {
+        if (audio3.paused) {
+          audio3.play();
+          playerButton3.innerHTML = pauseIcon3;
+        } else {
+          audio3.pause();
+          playerButton3.innerHTML = playIcon3;
+        }
+      }
+
+      playerButton3.addEventListener("click", toggleAudio3);
+
+      function changeTimelinePosition3() {
+        const percentagePosition = (100 * audio3.currentTime) / audio3.duration;
+        timeline3.style.backgroundSize = `${percentagePosition}% 100%`;
+        timeline3.value = percentagePosition;
+      }
+
+      audio3.ontimeupdate = changeTimelinePosition3;
+
+      function audioEnded3() {
+        playerButton3.innerHTML = playIcon3;
+      }
+
+      audio3.onended = audioEnded3;
+
+      function changeSeek3() {
+        const time = (timeline3.value * audio3.duration) / 100;
+        audio3.currentTime = time;
+      }
+
+      timeline3.addEventListener("change", changeSeek3);
+
+      function toggleSound3() {
+        audio3.muted = !audio3.muted;
+        soundButton3.innerHTML = audio3.muted ? muteIcon3 : soundIcon3;
+      }
+
+      soundButton3.addEventListener("click", toggleSound3);
+    </script>
+    <script>
+      const playerButton4 = document.getElementById("player-button4"),
+        audio4 = document.getElementById("audio4"),
+        timeline4 = document.getElementById("timeline4"),
+        soundButton4 = document.getElementById("sound-button4"),
+        playIcon4 = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+      </svg>
+          `,
+        pauseIcon4 = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
+    </svg>
+          `,
+        soundIcon4 = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clip-rule="evenodd" />
+    </svg>`,
+        muteIcon4 = `
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dab2c4">
+      <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>`;
+
+      function toggleAudio4() {
+        if (audio4.paused) {
+          audio4.play();
+          playerButton4.innerHTML = pauseIcon4;
+        } else {
+          audio4.pause();
+          playerButton4.innerHTML = playIcon4;
+        }
+      }
+
+      playerButton4.addEventListener("click", toggleAudio4);
+
+      function changeTimelinePosition4() {
+        const percentagePosition = (100 * audio4.currentTime) / audio4.duration;
+        timeline4.style.backgroundSize = `${percentagePosition}% 100%`;
+        timeline4.value = percentagePosition;
+      }
+
+      audio4.ontimeupdate = changeTimelinePosition3;
+
+      function audioEnded4() {
+        playerButton4.innerHTML = playIcon4;
+      }
+
+      audio4.onended = audioEnded4;
+
+      function changeSeek4() {
+        const time = (timeline4.value * audio4.duration) / 100;
+        audio4.currentTime = time;
+      }
+
+      timeline4.addEventListener("change", changeSeek4);
+
+      function toggleSound4() {
+        audio4.muted = !audio4.muted;
+        soundButton4.innerHTML = audio4.muted ? muteIcon4 : soundIcon4;
+      }
+
+      soundButton4.addEventListener("click", toggleSound4);
+    </script>
+  </body>
+</html>
